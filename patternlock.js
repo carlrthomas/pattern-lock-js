@@ -198,8 +198,8 @@
         }
 
         function updateCodeDisplay(target) {
-            let c = (target.getAttribute('cx') - 20) / 30) // 20 = 0, 50 = 1, 80 = 2
-            let r = (target.getAttribute('cy') - 20) / 30)
+            let c = (target.getAttribute('cx') - 20) / 30 // 20 = 0, 50 = 1, 80 = 2
+            let r = (target.getAttribute('cy') - 20) / 30
 
             let code_number = 1 + c + (r * 3)
             code_numbers.push(code_number)
