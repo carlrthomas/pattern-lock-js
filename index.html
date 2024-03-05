@@ -28,9 +28,15 @@
         }
         #lock {
             width: 100%;
-            height: calc(100% - 20vh);
+            height: calc(100% - 24vh);
             padding-bottom: 12vh;
             min-height: 120px;
+        }
+
+        .draw-prompt {
+            font-size: 4vh;
+            line-height: 4vh;
+            text-align: center;
         }
         
         #code_display {
@@ -55,7 +61,7 @@
 
 <body>
     <div class="container">
-        <p id="code_display"></p>
+        <p class="draw-prompt">Draw your pattern</p>
         <svg class="patternlock" id="lock" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <g class="lock-actives"></g>
             <g class="lock-lines"></g>
@@ -73,6 +79,7 @@
                 <circle cx="80" cy="80" r="2"/>
             </g>
         <svg>
+        <p id="code_display"></p>
         <p id="footer">Forked from Tympanix's pattern-lock-js.</p>
     </div>
 
