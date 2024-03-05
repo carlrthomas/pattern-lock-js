@@ -44,8 +44,10 @@
         let dots = svg.find('.lock-dots circle')
         let lines = svg.find('.lock-lines')
         let actives = svg.find('.lock-actives')
+        let code_display = document.getElementById('code_display')
         var pt = root.createSVGPoint();
         let code = []
+        let code_numbers = []
         let currentline
         let currenthandler
 
@@ -99,6 +101,8 @@
 
         function clear() {
             code = []
+            code_display.innerHTML = ''
+            code_numbers = []
             currentline = undefined
             currenthandler = undefined
             svg.removeClass('success error')
@@ -176,6 +180,7 @@
             let cy = target.getAttribute('cy')
             if (isAvailable(target) && !isUsed(target)) {
                 stopTrack(currentline, target)
+                updateCodeDisplay(target)
                 currentline = beginTrack(target)
             }
         }
@@ -190,6 +195,15 @@
             let y = target.getAttribute('cy')
             line.setAttribute('x2', x)
             line.setAttribute('y2', y)
+        }
+
+        function updateCodeDisplay(target) {
+            let c = (target.getAttribute('cx') - 20) / 30) // 20 = 0, 50 = 1, 80 = 2
+            let r = (target.getAttribute('cy') - 20) / 30)
+
+            let code_number = 1 + c + (r * 3)
+            code_numbers.push(code_number)
+            code_display.innerHTML = code_display.innerHTML + code_number
         }
 
         function beginTrack(target) {
