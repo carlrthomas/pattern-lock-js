@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-    <meta property="og:image" content="https://tympanix.github.io/pattern-lock-js/mockup.jpg" />
     <title>Pattern Lock Demo</title>
     <style media="screen">
         * {
@@ -27,26 +26,23 @@
             margin: auto;
             height: 100%;
         }
-
-        h1 {
-            text-align: center;
-            margin: 0;
-            height: 15vh;
-            line-height: 15vh;
-            text-align: center;
-            font-size: 6vh;
-
-        }
-
         #lock {
             width: 100%;
-            height: calc(100% - 21vh);
+            height: calc(100% - 7vh);
             padding-bottom: 12vh;
             min-height: 120px;
         }
         
         #code_display {
-            fon-size: 6vh;
+            font-size: 6vh;
+            line-height: 6vh;
+            text-align: center;
+        }
+
+        #footer {
+            font-size: 1vh;
+            line-height: 1vh;
+            text-align: center;
         }
     </style>
 
@@ -59,7 +55,6 @@
 
 <body>
     <div class="container">
-        <h1>pattern-lock-js</h1>
         <svg class="patternlock" id="lock" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <g class="lock-actives"></g>
             <g class="lock-lines"></g>
@@ -78,6 +73,7 @@
             </g>
         <svg>
         <p id="code_display">test</p>
+        <p id="footer">Forked from Tympanix's pattern-lock-js.</p>
     </div>
 
 
